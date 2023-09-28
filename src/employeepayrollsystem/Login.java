@@ -380,7 +380,7 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(this, "Sign up");
         this.dispose();
-        new SignUp(con).setVisible(true);
+//        new NewJFrame().setVisible(true);
     }//GEN-LAST:event_btnSignUpActionPerformed
 
     ////valid fild
