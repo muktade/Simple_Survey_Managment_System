@@ -12,6 +12,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JRootPane;
 import javax.swing.Timer;
 
 /**
@@ -21,6 +22,7 @@ import javax.swing.Timer;
 public class SignUp extends javax.swing.JFrame {
 
     Connection con = null;
+
     /**
      * Creates new form NewJFrame
      */
@@ -28,16 +30,17 @@ public class SignUp extends javax.swing.JFrame {
         initComponents();
         this.con = con;
         dateCreate();
-         openCenter();
+        openCenter();
 
-        
     }
-    void openCenter(){
-        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+
+    void openCenter() {
+        
+//        setDefaultCloseOperation(0);
         setLocationRelativeTo(null);
     }
-    
-     void dateCreate() {
+
+    void dateCreate() {
         Calendar cld = new GregorianCalendar();
         int date = cld.get(Calendar.DAY_OF_MONTH);
         int month = cld.get(Calendar.MONTH);
@@ -371,7 +374,7 @@ public class SignUp extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jLabel4MouseClicked
 
-     ///mathod for show error message
+    ///mathod for show error message
     Timer timerUp = new Timer(30, new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent ae) {
@@ -401,7 +404,7 @@ public class SignUp extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-   
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
