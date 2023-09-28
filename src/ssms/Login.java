@@ -4,18 +4,82 @@
  */
 package ssms;
 
+import DAO.ConnectionProvider;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import javax.swing.JOptionPane;
+import javax.swing.Timer;
+
 /**
  *
  * @author M. A. MUKTADEER
  */
 public class Login extends javax.swing.JFrame {
 
+    Connection con = null;
+    ResultSet rs = null;
+    PreparedStatement pst = null;
+
     /**
      * Creates new form Login
      */
     public Login() {
         initComponents();
+        con = ConnectionProvider.getConnectDatabase();
+        dateCreate();
+        btnLogin.setEnabled(false);
     }
+
+    void dateCreate() {
+        Calendar cld = new GregorianCalendar();
+        int date = cld.get(Calendar.DAY_OF_MONTH);
+        int month = cld.get(Calendar.MONTH);
+        int year = cld.get(Calendar.YEAR);
+
+        ////time 
+        int sc = cld.get(Calendar.SECOND);
+        int mnt = cld.get(Calendar.MINUTE);
+        int hr = cld.get(Calendar.HOUR);
+        txtDate.setText(date + "/" + (month + 1) + "/" + year + "  |  " + hr + ":" + mnt + ":" + sc);
+    }
+
+    //////////mathod show password
+    void showPass() {
+        if (jCheckBoxEye.isSelected()) {
+            txt_pass.setEchoChar((char) 0);
+        } else {
+            txt_pass.setEchoChar('*');
+        }
+    }
+
+    ///mathod for show error message
+    Timer timerUp = new Timer(30, new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            if (jPanelErrorMass.getHeight() > 0) {
+                jPanelErrorMass.setBounds(jPanelErrorMass.getX(), jPanelErrorMass.getY(), jPanelErrorMass.getWidth(), jPanelErrorMass.getHeight() - 5);
+            } else {
+                timerUp.stop();
+            }
+        }
+    });
+     ///for show Error message
+
+    Timer timerDown = new Timer(30, new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            if (jPanelErrorMass.getHeight() != 100) {
+                jPanelErrorMass.setBounds(jPanelErrorMass.getX(), jPanelErrorMass.getY(), jPanelErrorMass.getWidth(), jPanelErrorMass.getHeight() + 5);
+            } else {
+                timerDown.stop();
+            }
+        }
+    });
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -287,6 +351,17 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
         timerUp.start();
     }//GEN-LAST:event_jLabelUpMouseClicked
+
+    ////valid fild
+    private void valid() {
+        if (!txt_userName.getText().equals("")) {
+            if (!txt_pass.getText().equals("")) {
+                btnLogin.setEnabled(true);
+            } else {
+                btnLogin.setEnabled(false);
+            }
+        }
+    }
 
     /**
      * @param args the command line arguments
