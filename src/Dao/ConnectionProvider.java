@@ -20,8 +20,8 @@ public class ConnectionProvider {
     public static Connection getConnectDatabase(){
         
         try{
-            Class.forName("oracle.jdbc.driver.OracleDriver");
-            Connection conn =DriverManager.getConnection("jdbc:oracle:thin:@//103.143.242.168:1521/orcl","PRAN_DAIRY","PRAN_DAIRY");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn =DriverManager.getConnection("jdbc:mysql://localhost:3306/eps","root","");
             JOptionPane.showMessageDialog(null, "Connection to database is successful");
       
             return conn;
