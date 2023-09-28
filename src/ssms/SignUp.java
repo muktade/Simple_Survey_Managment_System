@@ -15,6 +15,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
+import main.GetCurrentTime;
 
 /**
  *
@@ -25,6 +26,8 @@ public class SignUp extends javax.swing.JFrame {
     Connection con = null;
     ResultSet rs = null;
     PreparedStatement pst = null;
+    boolean st = false;
+    GetCurrentTime ct = null;
 
     /**
      * Creates new form Login
@@ -32,30 +35,12 @@ public class SignUp extends javax.swing.JFrame {
     public SignUp(Connection con) {
         initComponents();
         this.con = con;
-        dateCreate();
+        ct = new GetCurrentTime(txtDate, !st);
+        txtDate = ct.getTxtDate();
+//        GetCurrentTime.liveDateShow(txtDate, !st);
     }
 
-    void dateCreate() {
-        Calendar cld = new GregorianCalendar();
-        int date = cld.get(Calendar.DAY_OF_MONTH);
-        int month = cld.get(Calendar.MONTH);
-        int year = cld.get(Calendar.YEAR);
-
-        ////time 
-        int sc = cld.get(Calendar.SECOND);
-        int mnt = cld.get(Calendar.MINUTE);
-        int hr = cld.get(Calendar.HOUR);
-        txtDate.setText(date + "/" + (month + 1) + "/" + year + "  |  " + hr + ":" + mnt + ":" + sc);
-    }
-
-    //////////mathod show password
-//    void showPass() {
-//        if (jCheckBoxEye.isSelected()) {
-//            txt_pass.setEchoChar((char) 0);
-//        } else {
-//            txt_pass.setEchoChar('*');
-//        }
-//    }
+   
 
     ///mathod for show error message
     Timer timerUp = new Timer(30, new ActionListener() {
@@ -371,6 +356,12 @@ public class SignUp extends javax.swing.JFrame {
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         // TODO add your handling code here:
+        st = true;
+        ct.setR(!st);
+//        Thread th = new Thread(ct);
+//        th.start();
+//        txtDate = ct.getTxtDate();
+//        GetCurrentTime.liveDateShow(txtDate, !st);
         dispose();
     }//GEN-LAST:event_jLabel4MouseClicked
 

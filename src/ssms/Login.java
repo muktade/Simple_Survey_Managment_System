@@ -13,8 +13,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
+import main.GetCurrentTime;
 
 /**
  *
@@ -25,6 +27,8 @@ public class Login extends javax.swing.JFrame {
     Connection con = null;
     ResultSet rs = null;
     PreparedStatement pst = null;
+    boolean st = false;
+    GetCurrentTime ct = null;
 
     /**
      * Creates new form Login
@@ -32,21 +36,10 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         con = ConnectionProvider.getConnectDatabase();
-        dateCreate();
+//        dateCreate();
+        ct = new GetCurrentTime(txtDate, !st);
+        txtDate = ct.getTxtDate();
         btnLogin.setEnabled(false);
-    }
-
-    void dateCreate() {
-        Calendar cld = new GregorianCalendar();
-        int date = cld.get(Calendar.DAY_OF_MONTH);
-        int month = cld.get(Calendar.MONTH);
-        int year = cld.get(Calendar.YEAR);
-
-        ////time 
-        int sc = cld.get(Calendar.SECOND);
-        int mnt = cld.get(Calendar.MINUTE);
-        int hr = cld.get(Calendar.HOUR);
-        txtDate.setText(date + "/" + (month + 1) + "/" + year + "  |  " + hr + ":" + mnt + ":" + sc);
     }
 
     //////////mathod show password
@@ -336,10 +329,14 @@ public class Login extends javax.swing.JFrame {
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         // TODO add your handling code here:
+        st = true;
+        ct.setR(!st);
+        
+        txtDate = ct.getTxtDate();
         dispose();
     }//GEN-LAST:event_jLabel4MouseClicked
 
-    
+
     private void jCheckBoxEyeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxEyeActionPerformed
         // TODO add your handling code here:
         showPass();
