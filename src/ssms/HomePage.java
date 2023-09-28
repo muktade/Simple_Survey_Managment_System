@@ -3808,7 +3808,6 @@ public class HomePage extends javax.swing.JFrame {
                                 break;
 
                             case "Search":
-
                                 setPanelShow(searchEmployee);
                                 break;
 

@@ -15,14 +15,24 @@ public class tables {
 
     public static void main(String[] args) {
         try {
-            String useTable = "create table user(id int AUTO_INCREMENT primary key, name varchar(50), email varchar(100), mobailNumber varchar(20), address varchar(200), password varchar(200), securityQuestion varchar(200), answer varchar(200), status varchar(10), UNIQUE(email))";
-            DbOpretions.setOrDeleteData(useTable, "User Table is Created");
-            ///// category table
-            String categoryTbl="create table category(id int AUTO_INCREMENT PRIMARY KEY, name varchar(150))";
-            DbOpretions.setOrDeleteData(useTable, "Category Table is created");
-            /////////product Table 
-            String productTbl = "create table product(id int AUTO_INCREMENT primary key, name varchar(150), category varchar(150),price varchar(50))";
-            DbOpretions.setOrDeleteData(productTbl, "Product Table is Created.");
+            String useTable = "create table surveyCreator(id int AUTO_INCREMENT primary key, userName varchar(20), password varchar(150),firstName varchar(20), lastName varchar(20),faculty varchar(20),gender varchar(10), email varchar(50),phoneNo varchar(20),isActive int, createDate Date )";
+            DbOpretions.setOrDeleteData(useTable, "surveyCreator Table is Created");
+            ///// Servey table
+            String servey="create table cervey(id int AUTO_INCREMENT PRIMARY KEY, surveyTitle varchar(30),creatorId int, creatorName varchar(30), createDate date)";
+            DbOpretions.setOrDeleteData(servey, "Servey Table is created");
+            ///// question table
+            String question="create table question(id int AUTO_INCREMENT PRIMARY KEY, qPosition int,surveyId int, qText varchar(100), qAns varchar(10))";
+            DbOpretions.setOrDeleteData(question, "question Table is created");
+             ///// SConfig table
+            String sConfig="create table sConfig(id int AUTO_INCREMENT PRIMARY KEY, surveyId int,sMarks int, sDate Date)";
+            DbOpretions.setOrDeleteData(sConfig, "SConfig Table is created");
+              ///// SMapping table
+            String sMapping="create table sMapping(id int AUTO_INCREMENT PRIMARY KEY, scId int,surveyId int, qAns varchar(10))";
+            DbOpretions.setOrDeleteData(sMapping, "SMapping Table is created");
+
+//            /////////product Table 
+//            String productTbl = "create table product(id int AUTO_INCREMENT primary key, name varchar(150), category varchar(150),price varchar(50))";
+//            DbOpretions.setOrDeleteData(productTbl, "Product Table is Created.");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }

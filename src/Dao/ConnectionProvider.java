@@ -7,6 +7,8 @@ package DAO;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 import javax.swing.JOptionPane;
 
@@ -25,6 +27,10 @@ public class ConnectionProvider {
 //            Connection conn =DriverManager.getConnection("jdbc:mysql://localhost:3306/eps","root","");
             Connection conn =DriverManager.getConnection("jdbc:sqlite:db.sqlite","root","root");
             JOptionPane.showMessageDialog(null, "Connection to database is successful");
+            
+//            Statement stmt = conn.createStatement();
+//            
+//            stmt.executeUpdate("drop table surveyCreator");
       
             return conn;
            
