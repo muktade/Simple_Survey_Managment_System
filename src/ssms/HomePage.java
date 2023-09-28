@@ -56,7 +56,7 @@ import net.proteanit.sql.DbUtils;
  */
 public class HomePage extends javax.swing.JFrame {
 
-    int i;
+   int i;
     String gender;
 
     /////news show
@@ -78,7 +78,7 @@ public class HomePage extends javax.swing.JFrame {
 //                                System.out.println("x"+jPanel9.getX()+"y"+jPanel9.getY()+"hig"+jPanel6.getHeight()+"ei"+jPanel6.getWidth());
 
                             } catch (InterruptedException ex) {
-                                System.Logger.getLogger(HomePage.class.getName()).log(Level.SEVERE, null, ex);
+                                Logger.getLogger(HomePage.class.getName()).log(Level.SEVERE, null, ex);
                             }
 
                         }
@@ -101,7 +101,6 @@ public class HomePage extends javax.swing.JFrame {
                             } catch (InterruptedException ex) {
                                 Logger.getLogger(HomePage.class.getName()).log(Level.SEVERE, null, ex);
                             }
-//                            newsSow();
 //                            newsSow();
                         }
 //                        System.out.println(ii);
@@ -700,7 +699,7 @@ public class HomePage extends javax.swing.JFrame {
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel20))
-                    .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 211, Short.MAX_VALUE))
+                    .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, 211, Short.MAX_VALUE))
                 .addGap(12, 12, 12))
             .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -852,7 +851,7 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
 
-        jPanel10.setBorder(javax.swing.BorderFactory.createTitledBorder(null, bundle.getString("HomePage.jPanel10.border.title"), null, null, new java.awt.Font("Adobe Arabic", 1, 14))); // NOI18N
+        jPanel10.setBorder(javax.swing.BorderFactory.createTitledBorder(null, bundle.getString("HomePage.jPanel10.border.title"), javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Adobe Arabic", 1, 14))); // NOI18N
 
         jLabel9.setText(bundle.getString("HomePage.jLabel9.text")); // NOI18N
 
@@ -1113,9 +1112,7 @@ public class HomePage extends javax.swing.JFrame {
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addComponent(jLabel39))
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_job, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(txt_job, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1176,7 +1173,7 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
 
-        jPanel18.setBorder(javax.swing.BorderFactory.createTitledBorder(null, bundle.getString("HomePage.jPanel18.border.title"), null, null, new java.awt.Font("Adobe Arabic", 1, 14))); // NOI18N
+        jPanel18.setBorder(javax.swing.BorderFactory.createTitledBorder(null, bundle.getString("HomePage.jPanel18.border.title"), javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Adobe Arabic", 1, 14))); // NOI18N
 
         jLabel113.setText(bundle.getString("HomePage.jLabel113.text")); // NOI18N
 
@@ -1219,7 +1216,7 @@ public class HomePage extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel19.setBorder(javax.swing.BorderFactory.createTitledBorder(null, bundle.getString("HomePage.jPanel19.border.title"), null, null, new java.awt.Font("Adobe Arabic", 0, 18))); // NOI18N
+        jPanel19.setBorder(javax.swing.BorderFactory.createTitledBorder(null, bundle.getString("HomePage.jPanel19.border.title"), javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Adobe Arabic", 0, 18))); // NOI18N
 
         jLabel114.setText(bundle.getString("HomePage.jLabel114.text")); // NOI18N
 
@@ -1705,7 +1702,7 @@ public class HomePage extends javax.swing.JFrame {
                 .addGap(7, 7, 7))
         );
 
-        jPanel13.setBorder(javax.swing.BorderFactory.createTitledBorder(null, bundle.getString("HomePage.jPanel13.border.title"), null, null, new java.awt.Font("Adobe Arabic", 1, 14))); // NOI18N
+        jPanel13.setBorder(javax.swing.BorderFactory.createTitledBorder(null, bundle.getString("HomePage.jPanel13.border.title"), javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Adobe Arabic", 1, 14))); // NOI18N
 
         jLabel70.setText(bundle.getString("HomePage.jLabel70.text")); // NOI18N
 
@@ -1814,7 +1811,7 @@ public class HomePage extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addGap(0, 8, Short.MAX_VALUE))
             .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(allowanceLayout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 543, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1848,7 +1845,7 @@ public class HomePage extends javax.swing.JFrame {
                         .addGroup(allowanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel71)
                             .addComponent(lbl_total))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                         .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txt_cal, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1865,7 +1862,7 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
 
-        jPanel14.setBorder(javax.swing.BorderFactory.createTitledBorder(null, bundle.getString("HomePage.jPanel14.border.title"), null, null, new java.awt.Font("Adobe Arabic", 1, 14))); // NOI18N
+        jPanel14.setBorder(javax.swing.BorderFactory.createTitledBorder(null, bundle.getString("HomePage.jPanel14.border.title"), javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Adobe Arabic", 1, 14))); // NOI18N
 
         jLabel73.setText(bundle.getString("HomePage.jLabel73.text")); // NOI18N
 
@@ -2090,7 +2087,7 @@ public class HomePage extends javax.swing.JFrame {
                 .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(64, 64, 64)
                 .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
 
         getContentPane().add(updateSalary, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 19, 770, 430));
@@ -2104,7 +2101,7 @@ public class HomePage extends javax.swing.JFrame {
 
         txt_id3.setEditable(false);
 
-        jPanel17.setBorder(javax.swing.BorderFactory.createTitledBorder(null, bundle.getString("HomePage.jPanel17.border.title"), null, null, new java.awt.Font("Adobe Arabic", 1, 14))); // NOI18N
+        jPanel17.setBorder(javax.swing.BorderFactory.createTitledBorder(null, bundle.getString("HomePage.jPanel17.border.title"), javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Adobe Arabic", 1, 14))); // NOI18N
 
         jLabel95.setText(bundle.getString("HomePage.jLabel95.text")); // NOI18N
 
@@ -2224,7 +2221,6 @@ public class HomePage extends javax.swing.JFrame {
 
         jLabel108.setText(bundle.getString("HomePage.jLabel108.text")); // NOI18N
 
-        buttonGroup1.add(r_percentage1);
         r_percentage1.setText(bundle.getString("HomePage.r_percentage1.text")); // NOI18N
         r_percentage1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2234,7 +2230,6 @@ public class HomePage extends javax.swing.JFrame {
 
         jLabel109.setText(bundle.getString("HomePage.jLabel109.text")); // NOI18N
 
-        buttonGroup1.add(r_amount2);
         r_amount2.setText(bundle.getString("HomePage.r_amount2.text")); // NOI18N
         r_amount2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2329,7 +2324,7 @@ public class HomePage extends javax.swing.JFrame {
                                             .addComponent(txt_job3, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                         .addGap(18, 18, 18)
                         .addGroup(deductionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 114, Short.MAX_VALUE)
+                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
                             .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txt_Save, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(deductionLayout.createSequentialGroup()
@@ -2422,7 +2417,7 @@ public class HomePage extends javax.swing.JFrame {
 
         getContentPane().add(deduction, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 19, 770, 430));
 
-        jPanel16.setBorder(javax.swing.BorderFactory.createTitledBorder(null, bundle.getString("HomePage.jPanel16.border.title"), null, null, new java.awt.Font("Adobe Arabic", 1, 14))); // NOI18N
+        jPanel16.setBorder(javax.swing.BorderFactory.createTitledBorder(null, bundle.getString("HomePage.jPanel16.border.title"), javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Adobe Arabic", 1, 14))); // NOI18N
 
         jLabel84.setText(bundle.getString("HomePage.jLabel84.text")); // NOI18N
 
@@ -2598,104 +2593,6 @@ public class HomePage extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    public void setPanelShow(JPanel panel) {
-        jPanelHome.setVisible(false);
-        for (JPanel menuPanel : panels) {
-            menuPanel.setVisible(false);
-//            System.out.println("i am false");
-        }
-        panel.setVisible(true);
-//        System.out.println("i am true");
-    }
-
-    public void setBorder() {
-        ///set border
-        //set logo border
-        Border panelBorder = BorderFactory.createMatteBorder(0, 0, 2, 0, Color.lightGray);
-        jPanelLogoAndName.setBorder(panelBorder);
-
-    }
-
-///create mathode for set label background    
-    public void setBackgroundEfact(JLabel label) {
-
-        ///////setSelect menulable backgrond
-        for (JLabel menuItem : menuLabels) {
-            menuItem.setBackground(new Color(70, 73, 73));
-            menuItem.setForeground(Color.WHITE);
-        }
-        label.setBackground(new Color(15, 180, 125));
-        label.setForeground(Color.blue);
-
-    }
-
-///ctreate mouse intnce mathode
-    public void createMouseIntance() {
-        Component[] components = jPanelManu.getComponents();
-        for (Component component : components) {
-            if (component instanceof JLabel) {
-                JLabel label = (JLabel) component;
-                label.addMouseListener(new MouseListener() {
-                    @Override
-                    public void mouseClicked(MouseEvent me) {
-                        ////change background
-                        setBackgroundEfact(label);
-                        String name = label.getText().trim();
-                        switch (name) {
-                            case "Employee Manager":
-                                setPanelShow(employee);
-//                                System.out.println(name);
-                                break;
-
-                            case "Search":
-
-                                setPanelShow(searchEmployee);
-                                break;
-
-                            case "Allowance":
-                                setPanelShow(allowance);
-                                break;
-
-                            case "Update Salary":
-                                setPanelShow(updateSalary);
-                                break;
-
-                            case "Deduction":
-                                setPanelShow(deduction);
-                                break;
-
-                            case "Payment": {
-                                setPanelShow(payment);
-                                break;
-                            }
-                        }
-
-                    }
-
-                    @Override
-                    public void mousePressed(MouseEvent me) {
-
-                    }
-
-                    @Override
-                    public void mouseReleased(MouseEvent me) {
-
-                    }
-
-                    @Override
-                    public void mouseEntered(MouseEvent me) {
-                        label.setBorder(setBorder);
-                    }
-
-                    @Override
-                    public void mouseExited(MouseEvent me) {
-                        label.setBorder(defaultBorder);
-                    }
-                });
-            }
-        }
-    }
-
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
         // TODO add your handling code here:
         dispose();
@@ -2703,7 +2600,6 @@ public class HomePage extends javax.swing.JFrame {
 
     private void jPanelManuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelManuMouseEntered
         // TODO add your handling code here:
-
     }//GEN-LAST:event_jPanelManuMouseEntered
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
@@ -2728,7 +2624,6 @@ public class HomePage extends javax.swing.JFrame {
         gender = "Female";
         r_female.setSelected(true);
         r_male.setSelected(false);
-
     }//GEN-LAST:event_r_femaleActionPerformed
 
     private void txt_firstnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_firstnameActionPerformed
@@ -2739,11 +2634,6 @@ public class HomePage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_salaryActionPerformed
 
-    //////
-    Connection conn = null;
-    PreparedStatement pst = null;
-    ResultSet rs = null;
-    byte[] person_image = null;
     private void cmd_saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmd_saveActionPerformed
         // TODO add your handling code here:
         int p = JOptionPane.showConfirmDialog(null, "Are you sure you want to add record?", "Add Record", JOptionPane.YES_NO_OPTION);
@@ -2752,10 +2642,10 @@ public class HomePage extends javax.swing.JFrame {
             try {
                 conn = ConnectionProvider.getConnectDatabase();
                 String sql = "insert into Staff_information "
-                        + "(first_name,surname,Dob,Email,"
-                        + "Telephone,Address,Department,"
-                        + "Image,Salary,Gender,address2l,"
-                        + "Post_code, Designation,Status,job_title,Apartment,Date_hired) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
+                + "(first_name,surname,Dob,Email,"
+                + "Telephone,Address,Department,"
+                + "Image,Salary,Gender,address2l,"
+                + "Post_code, Designation,Status,job_title,Apartment,Date_hired) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
 
                 pst = conn.prepareStatement(sql);
                 pst.setString(1, txt_firstname.getText());
@@ -2782,7 +2672,7 @@ public class HomePage extends javax.swing.JFrame {
 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, e);
-//                e.printStackTrace();
+                //                e.printStackTrace();
                 JOptionPane.showMessageDialog(null, "Data is not saved", "Error", JOptionPane.YES_NO_OPTION);
             }
             try {
@@ -2797,7 +2687,7 @@ public class HomePage extends javax.swing.JFrame {
                     String add2 = rs.getString("first_name");
                     String add3 = rs.getString("dob");
                     String result = add3.replace("/", "");
-//                    int pas = Integer.parseInt(result);
+                    //                    int pas = Integer.parseInt(result);
                     String add4 = rs.getString("department");
 
                     String sql = "insert into Users (division,username,password,employee_id) values ('" + add4 + "','" + add2 + "','" + result + "','" + add1 + "') ";
@@ -2809,7 +2699,7 @@ public class HomePage extends javax.swing.JFrame {
 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, e);
-//                e.printStackTrace();
+                //                e.printStackTrace();
                 JOptionPane.showMessageDialog(null, "User Not Created", "Error", JOptionPane.YES_NO_OPTION);
 
             } finally {
@@ -2819,7 +2709,7 @@ public class HomePage extends javax.swing.JFrame {
                     pst.close();
 
                 } catch (Exception e) {
-//                    JOptionPane.showMessageDialog(null, e);
+                    //                    JOptionPane.showMessageDialog(null, e);
                 }
 
                 Date currentDate = GregorianCalendar.getInstance().getTime();
@@ -2838,9 +2728,9 @@ public class HomePage extends javax.swing.JFrame {
                     String reg = "insert into audit (employee_id, date, status) values ('" + val + "','" + value0 + " / " + value1 + "','Added Record')";
                     pst = conn.prepareStatement(reg);
                     pst.execute();
-//                    JOptionPane.showMessageDialog(null, "Seve success");
+                    //                    JOptionPane.showMessageDialog(null, "Seve success");
                 } catch (Exception e) {
-//                    JOptionPane.showMessageDialog(null, "Data is not saved", "Error", JOptionPane.YES_NO_OPTION);
+                    //                    JOptionPane.showMessageDialog(null, "Data is not saved", "Error", JOptionPane.YES_NO_OPTION);
                 } finally {
 
                     try {
@@ -2848,7 +2738,7 @@ public class HomePage extends javax.swing.JFrame {
                         pst.close();
 
                     } catch (Exception e) {
-//                        JOptionPane.showMessageDialog(null, e);
+                        //                        JOptionPane.showMessageDialog(null, e);
                     }
                 }
             }
@@ -2871,7 +2761,7 @@ public class HomePage extends javax.swing.JFrame {
         txt_pc.setText("");
         txt_desig.setText("");
         txt_job.setText("");
-//        txt_apt.setText("");
+        //        txt_apt.setText("");
         txt_doj.setText("");
         img.setIcon(null);
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -2879,6 +2769,303 @@ public class HomePage extends javax.swing.JFrame {
     private void txt_jobActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_jobActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_jobActionPerformed
+
+    private void btnAttachImageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAttachImageActionPerformed
+        // TODO add your handling code here:
+        JFileChooser jChooser = new JFileChooser();
+        jChooser.showOpenDialog(null);
+        File file = jChooser.getSelectedFile();
+        filename = file.getAbsolutePath();
+        Image icon = new ImageIcon(filename).getImage().getScaledInstance(img.getWidth(), img.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon imageIcon = new ImageIcon(icon);
+        img.setIcon(imageIcon);
+
+        //////image path byte code
+        try {
+            File imageFile = new File(filename);
+            FileInputStream fos = new FileInputStream(imageFile);
+            byte[] bs = new byte[1024];
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            for (int readNume; (readNume = fos.read(bs)) != -1;) {
+                baos.write(bs, 0, readNume);
+            }
+            person_image = baos.toByteArray();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_btnAttachImageActionPerformed
+
+    private void employeeComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_employeeComponentShown
+        // TODO add your handling code here:
+        int ei=EmployeePayrollSystem.empId;
+        txt_emp.setText(String.valueOf(ei));
+    }//GEN-LAST:event_employeeComponentShown
+
+    private void txt_searchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_searchKeyReleased
+        // TODO add your handling code here:
+        try {
+            String s = txt_search.getText();
+            String sql = "select * from staff_information where employee_id=' " + s + "'";
+            //            conn = ConnectionProvider.getConnectDatabase();
+            Statement st = conn.createStatement();
+
+            rs = st.executeQuery(sql);
+            while (rs.next()) {
+
+                int add1 = rs.getInt("employee_id");
+                txt_id4.setText(String.valueOf(add1));
+
+                String add2 = rs.getString("first_name");
+                txt_firstname6.setText(add2);
+
+                String add3 = rs.getString("surname");
+                txt_surname6.setText(add3);
+
+                String add4 = rs.getString("Dob");
+                txt_dob6.setText(add4);
+
+                String add5 = rs.getString("Email");
+                txt_email2.setText(add5);
+
+                String add6 = rs.getString("Telephone");
+                txt_tel2.setText(add6);
+
+                String add7 = rs.getString("Address");
+                txt_address2.setText(add7);
+
+                String add8 = rs.getString("Department");
+                txt_dep4.setText(add8);
+
+                String add9 = rs.getString("Gender");
+                //                txt_dep.setText(add9);
+
+                String add10 = rs.getString("Salary");
+                txt_salary6.setText(add10);
+
+                String add11 = rs.getString("address2l");
+                txt_add4.setText(add11);
+
+                String add12 = rs.getString("Apartment");
+                txt_apt.setText(add12);
+
+                String add13 = rs.getString("Post_code");
+                txt_pc2.setText(add13);
+
+                String add14 = rs.getString("Status");
+                txt_status.setText(add14);
+
+                String add15 = rs.getString("Date_hired");
+                txt_doj4.setText(add15);
+
+                String add16 = rs.getString("job_title");
+                txt_job4.setText(add16);
+
+                String add17 = rs.getString("Designation");
+                txt_desig4.setText(add17);
+
+                byte[] img = rs.getBytes("Image");
+                ImageIcon imageIcon = new ImageIcon(new ImageIcon(img).getImage().getScaledInstance(lbl_img.getWidth(), lbl_img.getHeight(), Image.SCALE_SMOOTH));
+                lbl_img.setIcon(imageIcon);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+            e.printStackTrace();
+        } finally {
+
+            try {
+
+                rs.close();
+                pst.close();
+
+            } catch (Exception e) {
+
+            }
+        }
+    }//GEN-LAST:event_txt_searchKeyReleased
+
+    private void r_male2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_male2ActionPerformed
+        // TODO add your handling code here:
+
+        gender = "Male";
+    }//GEN-LAST:event_r_male2ActionPerformed
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        // TODO add your handling code here:
+
+        gender = "Female";
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+    private void txt_firstname6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_firstname6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_firstname6ActionPerformed
+
+    private void txt_aptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_aptActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_aptActionPerformed
+
+    private void txt_salary6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_salary6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_salary6ActionPerformed
+
+    private void txt_job4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_job4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_job4ActionPerformed
+
+    private void cmd_deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmd_deleteActionPerformed
+        // TODO add your handling code here:
+
+        int p = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete record?", "Delete", JOptionPane.YES_NO_OPTION);
+        if (p == 0) {
+            Date currentDate = GregorianCalendar.getInstance().getTime();
+            DateFormat df = DateFormat.getDateInstance();
+            String dateString = df.format(currentDate);
+
+            Date d = new Date();
+            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+            String timeString = sdf.format(d);
+
+            String value0 = timeString;
+            String value1 = dateString;
+            int val = Integer.parseInt(txt_emp.getText());
+            try {
+                String reg = "insert into Audit (employee_id, date, status) values ('" + val + "','" + value0 + " / " + value1 + "','Deleted Record')";
+                pst = conn.prepareStatement(reg);
+                pst.execute();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+            }
+            String sql = "delete from Staff_information where employee_id=? ";
+            try {
+                pst = conn.prepareStatement(sql);
+                pst.setString(1, txt_id4.getText());
+                pst.execute();
+
+                JOptionPane.showMessageDialog(null, "Record Deleted");
+
+            } catch (Exception e) {
+
+                JOptionPane.showMessageDialog(null, e);
+            } finally {
+
+                try {
+                    rs.close();
+                    pst.close();
+
+                } catch (Exception e) {
+
+                }
+            }
+            try {
+
+                String sq = "delete from Users where employee_id =?";
+                pst = conn.prepareStatement(sq);
+                pst.setString(1, txt_id4.getText());
+                pst.execute();
+                //                JOptionPane.showMessageDialog(null, "User Delete Done.");
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+        }
+    }//GEN-LAST:event_cmd_deleteActionPerformed
+
+    private void txt_updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_updateActionPerformed
+        // TODO add your handling code here:
+        int p = JOptionPane.showConfirmDialog(null, "Are you sure you want to update?", "Update Record", JOptionPane.YES_NO_OPTION);
+        if (p == 0) {
+
+            try {
+
+                String value1 = txt_firstname6.getText();
+                String value2 = txt_surname6.getText();
+                String value3 = txt_dob6.getText();
+                String value4 = txt_id4.getText();
+                String value5 = txt_email2.getText();
+                String value6 = txt_tel2.getText();
+                String value7 = txt_address2.getText();
+                String value8 = txt_dep4.getText();
+                String value9 = txt_add4.getText();
+                String value10 = txt_apt.getText();
+                String value11 = txt_pc2.getText();
+                String value12 = txt_desig4.getText();
+                String value13 = txt_status4.getText();
+                String value14 = txt_salary6.getText();
+                String value15 = txt_job4.getText();
+                String value16 = txt_doj4.getText();
+
+                String sql = "update Staff_information set employee_id='" + value4 + "',first_name='" + value1 + "', surname='" + value2 + "', "
+                + "Dob='" + value3 + "',Email='" + value5 + "',Telephone='" + value6 + "',"
+                + "Address='" + value7 + "',Department='" + value8 + "', address2l = '" + value9 + "', "
+                + "Apartment = '" + value10 + "', Post_code ='" + value11 + "', "
+                + "Designation ='" + value12 + "', Status ='" + value13 + "', Salary ='" + value14 + "', job_title ='" + value15 + "', Date_Hired ='" + value16 + "'   "
+                + " where employee_id='" + value4 + "' ";
+
+                pst = conn.prepareStatement(sql);
+                pst.execute();
+                JOptionPane.showMessageDialog(null, "Record Updated");
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+            Date currentDate = GregorianCalendar.getInstance().getTime();
+            DateFormat df = DateFormat.getDateInstance();
+            String dateString = df.format(currentDate);
+
+            Date d = new Date();
+            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+            String timeString = sdf.format(d);
+
+            String value0 = timeString;
+            String values = dateString;
+            int val = Integer.parseInt(txt_emp.getText());
+            try {
+                String reg = "insert into Audit (employee_id, date, status) values ('" + val + "','" + value0 + " / " + values + "','Updated Record')";
+                pst = conn.prepareStatement(reg);
+                pst.execute();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+            } finally {
+
+                try {
+                    rs.close();
+                    pst.close();
+
+                } catch (Exception e) {
+
+                }
+            }
+
+        }
+    }//GEN-LAST:event_txt_updateActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+        txt_firstname6.setText("");
+        txt_surname6.setText("");
+        txt_dob6.setText("");
+        txt_id4.setText("");
+        txt_email2.setText("");
+        txt_tel2.setText("");
+        txt_address2.setText("");
+        txt_dep4.setText("");
+        txt_add4.setText("");
+        txt_apt.setText("");
+        txt_pc2.setText("");
+        txt_desig4.setText("");
+        txt_status4.setText("");
+        txt_salary6.setText("");
+        txt_job4.setText("");
+        txt_doj4.setText("");
+        lbl_img.setIcon(null);
+        txt_search.setText("");
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void searchEmployeeComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_searchEmployeeComponentShown
+        // TODO add your handling code here:
+        int ei=EmployeePayrollSystem.empId;
+        txt_emp4.setText(String.valueOf(ei));
+    }//GEN-LAST:event_searchEmployeeComponentShown
 
     private void txt_salary2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_salary2ActionPerformed
         // TODO add your handling code here:
@@ -2891,6 +3078,57 @@ public class HomePage extends javax.swing.JFrame {
     private void txt_total_overtimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_total_overtimeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_total_overtimeActionPerformed
+
+    private void txt_search1ComponentRemoved(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_txt_search1ComponentRemoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_search1ComponentRemoved
+
+    private void txt_search1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_search1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_search1ActionPerformed
+
+    private void txt_search1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_search1KeyReleased
+        // TODO add your handling code here:
+        try {
+            int id = Integer.parseInt(txt_search1.getText());
+            String sql = "select * from Staff_information where employee_id= '" + id + "'";
+            Statement st = conn.createStatement();
+            //            pst = conn.prepareStatement(sql);
+            //            pst.setString(1, txt_search1.getText());
+            rs = st.executeQuery(sql);
+            while (rs.next()) {
+                String add1 = rs.getString("employee_id");
+                txt_empid.setText(add1);
+
+                String add2 = rs.getString("first_name");
+                txt_firstname2.setText(add2);
+
+                String add3 = rs.getString("surname");
+                txt_surname2.setText(add3);
+
+                String add4 = rs.getString("Dob");
+                txt_dob2.setText(add4);
+
+                String add5 = rs.getString("Salary");
+                txt_salary2.setText(add5);
+
+                String add6 = rs.getString("Department");
+                txt_dept.setText(add6);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        } finally {
+
+            try {
+
+                rs.close();
+                pst.close();
+
+            } catch (Exception e) {
+
+            }
+        }
+    }//GEN-LAST:event_txt_search1KeyReleased
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
@@ -2968,81 +3206,6 @@ public class HomePage extends javax.swing.JFrame {
         //////////see herer//////////////////////////////////
         Update_table();
     }//GEN-LAST:event_btnSaveActionPerformed
-/////////table model
-
-    void Update_table() {
-        try {
-            conn = ConnectionProvider.getConnectDatabase();
-            String sql = "select * from allowance";
-            pst = conn.prepareStatement(sql);
-            rs = pst.executeQuery();
-            table_allowance.setModel(DbUtils.resultSetToTableModel(rs));
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
-            e.printStackTrace();
-        } finally {
-
-            try {
-                rs.close();
-                pst.close();
-
-            } catch (Exception e) {
-
-            }
-        }
-    }
-
-
-    private void txt_search1ComponentRemoved(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_txt_search1ComponentRemoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_search1ComponentRemoved
-
-    private void txt_search1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_search1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_search1ActionPerformed
-
-    private void txt_search1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_search1KeyReleased
-        // TODO add your handling code here:
-        try {
-            int id = Integer.parseInt(txt_search1.getText());
-            String sql = "select * from Staff_information where employee_id= '" + id + "'";
-            Statement st = conn.createStatement();
-//            pst = conn.prepareStatement(sql);
-//            pst.setString(1, txt_search1.getText());
-            rs = st.executeQuery(sql);
-            while (rs.next()) {
-                String add1 = rs.getString("employee_id");
-                txt_empid.setText(add1);
-
-                String add2 = rs.getString("first_name");
-                txt_firstname2.setText(add2);
-
-                String add3 = rs.getString("surname");
-                txt_surname2.setText(add3);
-
-                String add4 = rs.getString("Dob");
-                txt_dob2.setText(add4);
-
-                String add5 = rs.getString("Salary");
-                txt_salary2.setText(add5);
-
-                String add6 = rs.getString("Department");
-                txt_dept.setText(add6);
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
-        } finally {
-
-            try {
-
-                rs.close();
-                pst.close();
-
-            } catch (Exception e) {
-
-            }
-        }
-    }//GEN-LAST:event_txt_search1KeyReleased
 
     private void txt_calActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_calActionPerformed
         // TODO add your handling code here:
@@ -3094,8 +3257,13 @@ public class HomePage extends javax.swing.JFrame {
 
     private void lbl_totalKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lbl_totalKeyTyped
         // TODO add your handling code here:
-
     }//GEN-LAST:event_lbl_totalKeyTyped
+
+    private void allowanceComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_allowanceComponentShown
+        // TODO add your handling code here:
+        int ei=EmployeePayrollSystem.empId;
+        txt_emp2.setText(String.valueOf(ei));
+    }//GEN-LAST:event_allowanceComponentShown
 
     private void txt_search2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_search2KeyReleased
         // TODO add your handling code here:
@@ -3103,8 +3271,8 @@ public class HomePage extends javax.swing.JFrame {
             int id = Integer.parseInt(txt_search2.getText());
             String sql = "select * from Staff_information where employee_id= '" + id + "'";
             Statement st = conn.createStatement();
-//            pst = conn.prepareStatement(sql);
-//            pst.setString(1, txt_search2.getText());
+            //            pst = conn.prepareStatement(sql);
+            //            pst.setString(1, txt_search2.getText());
             rs = st.executeQuery(sql);
             while (rs.next()) {
                 String add1 = rs.getString("employee_id");
@@ -3153,7 +3321,6 @@ public class HomePage extends javax.swing.JFrame {
         txt_dept2.setEditable(true);
         txt_dept2.setEnabled(true);
         txt_dept3.setText("");
-
     }//GEN-LAST:event_r_percentageActionPerformed
 
     private void r_amountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_amountActionPerformed
@@ -3228,18 +3395,23 @@ public class HomePage extends javax.swing.JFrame {
                 }
             }
         }
-
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void updateSalaryComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_updateSalaryComponentShown
+        // TODO add your handling code here:
+        int ei=EmployeePayrollSystem.empId;
+        txt_emp3.setText(String.valueOf(ei));
+    }//GEN-LAST:event_updateSalaryComponentShown
 
     private void txt_search4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_search4KeyReleased
         // TODO add your handling code here:
         try {
-//            conn=ConnectionProvider.getConnectDatabase();
+            //            conn=ConnectionProvider.getConnectDatabase();
             String id = txt_search4.getText();
             String sql = "select * from Staff_information where employee_id= '" + id + "'";
             Statement st = conn.createStatement();
-//            pst = conn.prepareStatement(sql);
-//            pst.setString(1, txt_search.getText());
+            //            pst = conn.prepareStatement(sql);
+            //            pst.setString(1, txt_search.getText());
             rs = st.executeQuery(sql);
             while (rs.next()) {
                 String add1 = rs.getString("employee_id");
@@ -3345,7 +3517,6 @@ public class HomePage extends javax.swing.JFrame {
         txt_reason.setText("");
         txt_search4.setText("");
         lbl_sal.setText("0.00");
-
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void txt_SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_SaveActionPerformed
@@ -3365,7 +3536,7 @@ public class HomePage extends javax.swing.JFrame {
                 pst.setInt(4, Integer.parseInt(lbl_total1.getText()));
                 pst.setString(5, txt_reason.getText());
                 pst.setInt(6, Integer.parseInt(txt_id3.getText()));
-//                pst.setString(7, lbl_emp.getText());
+                //                pst.setString(7, lbl_emp.getText());
 
                 pst.execute();
                 JOptionPane.showMessageDialog(null, "Data is saved successfully");
@@ -3404,7 +3575,6 @@ public class HomePage extends javax.swing.JFrame {
                 }
             }
         }
-
     }//GEN-LAST:event_txt_SaveActionPerformed
 
     private void r_percentage1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_percentage1ActionPerformed
@@ -3428,6 +3598,12 @@ public class HomePage extends javax.swing.JFrame {
         txt_deduction.setEnabled(true);
         txt_percentage.setText("");
     }//GEN-LAST:event_r_amount2ActionPerformed
+
+    private void deductionComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_deductionComponentShown
+        // TODO add your handling code here:
+        int ei=EmployeePayrollSystem.empId;
+        lbl_emp.setText(String.valueOf(ei));
+    }//GEN-LAST:event_deductionComponentShown
 
     private void txt_search3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_search3KeyReleased
         // TODO add your handling code here:
@@ -3507,10 +3683,10 @@ public class HomePage extends javax.swing.JFrame {
                 conn = ConnectionProvider.getConnectDatabase();
                 String sql = "select * from Deductions where employee_id = '" + value1 + "'";
                 Statement st = conn.createStatement();
-//                pst = conn.prepareStatement(sql);
+                //                pst = conn.prepareStatement(sql);
                 rs = st.executeQuery(sql);
                 while (rs.next()) {
-//                String val = rs.getString("deduction_amount");
+                    //                String val = rs.getString("deduction_amount");
                     v = rs.getInt("deduction_amount");
                     reason = rs.getString("deduction_reason");
                 }
@@ -3519,7 +3695,7 @@ public class HomePage extends javax.swing.JFrame {
 
                 String sq = "select * from Allowance where employee_id = '" + value1 + "'";
                 Statement ts = conn.createStatement();
-//                pst = conn.prepareStatement(sq);
+                //                pst = conn.prepareStatement(sq);
                 rs = ts.executeQuery(sq);
                 while (rs.next()) {
                     overTime = rs.getInt("overtime");
@@ -3530,7 +3706,7 @@ public class HomePage extends javax.swing.JFrame {
 
                 }
                 int calcTotal = Integer.parseInt(txt_salary4.getText());
-//                int v = Integer.parseInt(val);
+                //                int v = Integer.parseInt(val);
                 float total = calcTotal + x - v;
 
                 Document myDocument = new Document();
@@ -3580,291 +3756,125 @@ public class HomePage extends javax.swing.JFrame {
                 }
             }
         }
-
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void r_male2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_male2ActionPerformed
-        // TODO add your handling code here:
-
-        gender = "Male";
-    }//GEN-LAST:event_r_male2ActionPerformed
-
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
-        // TODO add your handling code here:
-
-        gender = "Female";
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
-
-    private void txt_firstname6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_firstname6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_firstname6ActionPerformed
-
-    private void txt_aptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_aptActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_aptActionPerformed
-
-    private void txt_salary6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_salary6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_salary6ActionPerformed
-
-    private void txt_job4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_job4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_job4ActionPerformed
-
-    private void cmd_deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmd_deleteActionPerformed
-        // TODO add your handling code here:
-
-        int p = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete record?", "Delete", JOptionPane.YES_NO_OPTION);
-        if (p == 0) {
-            Date currentDate = GregorianCalendar.getInstance().getTime();
-            DateFormat df = DateFormat.getDateInstance();
-            String dateString = df.format(currentDate);
-
-            Date d = new Date();
-            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
-            String timeString = sdf.format(d);
-
-            String value0 = timeString;
-            String value1 = dateString;
-            int val = Integer.parseInt(txt_emp.getText());
-            try {
-                String reg = "insert into Audit (employee_id, date, status) values ('" + val + "','" + value0 + " / " + value1 + "','Deleted Record')";
-                pst = conn.prepareStatement(reg);
-                pst.execute();
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, e);
-            }
-            String sql = "delete from Staff_information where employee_id=? ";
-            try {
-                pst = conn.prepareStatement(sql);
-                pst.setString(1, txt_id4.getText());
-                pst.execute();
-
-                JOptionPane.showMessageDialog(null, "Record Deleted");
-
-            } catch (Exception e) {
-
-                JOptionPane.showMessageDialog(null, e);
-            } finally {
-
-                try {
-                    rs.close();
-                    pst.close();
-
-                } catch (Exception e) {
-
-                }
-            }
-            try {
-
-                String sq = "delete from Users where employee_id =?";
-                pst = conn.prepareStatement(sq);
-                pst.setString(1, txt_id4.getText());
-                pst.execute();
-//                JOptionPane.showMessageDialog(null, "User Delete Done.");
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, e);
-            }
-
+    public void setPanelShow(JPanel panel) {
+        jPanelHome.setVisible(false);
+        for (JPanel menuPanel : panels) {
+            menuPanel.setVisible(false);
+//            System.out.println("i am false");
         }
-    }//GEN-LAST:event_cmd_deleteActionPerformed
+        panel.setVisible(true);
+//        System.out.println("i am true");
+    }
 
-    private void txt_updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_updateActionPerformed
-        // TODO add your handling code here:
-        int p = JOptionPane.showConfirmDialog(null, "Are you sure you want to update?", "Update Record", JOptionPane.YES_NO_OPTION);
-        if (p == 0) {
+    public void setBorder() {
+        ///set border
+        //set logo border
+        Border panelBorder = BorderFactory.createMatteBorder(0, 0, 2, 0, Color.lightGray);
+        jPanelLogoAndName.setBorder(panelBorder);
 
-            try {
+    }
 
-                String value1 = txt_firstname6.getText();
-                String value2 = txt_surname6.getText();
-                String value3 = txt_dob6.getText();
-                String value4 = txt_id4.getText();
-                String value5 = txt_email2.getText();
-                String value6 = txt_tel2.getText();
-                String value7 = txt_address2.getText();
-                String value8 = txt_dep4.getText();
-                String value9 = txt_add4.getText();
-                String value10 = txt_apt.getText();
-                String value11 = txt_pc2.getText();
-                String value12 = txt_desig4.getText();
-                String value13 = txt_status4.getText();
-                String value14 = txt_salary6.getText();
-                String value15 = txt_job4.getText();
-                String value16 = txt_doj4.getText();
+///create mathode for set label background    
+    public void setBackgroundEfact(JLabel label) {
 
-                String sql = "update Staff_information set employee_id='" + value4 + "',first_name='" + value1 + "', surname='" + value2 + "', "
-                        + "Dob='" + value3 + "',Email='" + value5 + "',Telephone='" + value6 + "',"
-                        + "Address='" + value7 + "',Department='" + value8 + "', address2l = '" + value9 + "', "
-                        + "Apartment = '" + value10 + "', Post_code ='" + value11 + "', "
-                        + "Designation ='" + value12 + "', Status ='" + value13 + "', Salary ='" + value14 + "', job_title ='" + value15 + "', Date_Hired ='" + value16 + "'   "
-                        + " where employee_id='" + value4 + "' ";
-
-                pst = conn.prepareStatement(sql);
-                pst.execute();
-                JOptionPane.showMessageDialog(null, "Record Updated");
-
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, e);
-            }
-
-            Date currentDate = GregorianCalendar.getInstance().getTime();
-            DateFormat df = DateFormat.getDateInstance();
-            String dateString = df.format(currentDate);
-
-            Date d = new Date();
-            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
-            String timeString = sdf.format(d);
-
-            String value0 = timeString;
-            String values = dateString;
-            int val = Integer.parseInt(txt_emp.getText());
-            try {
-                String reg = "insert into Audit (employee_id, date, status) values ('" + val + "','" + value0 + " / " + values + "','Updated Record')";
-                pst = conn.prepareStatement(reg);
-                pst.execute();
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, e);
-            } finally {
-
-                try {
-                    rs.close();
-                    pst.close();
-
-                } catch (Exception e) {
-
-                }
-            }
-
+        ///////setSelect menulable backgrond
+        for (JLabel menuItem : menuLabels) {
+            menuItem.setBackground(new Color(70, 73, 73));
+            menuItem.setForeground(Color.WHITE);
         }
-    }//GEN-LAST:event_txt_updateActionPerformed
+        label.setBackground(new Color(15, 180, 125));
+        label.setForeground(Color.blue);
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-        txt_firstname6.setText("");
-        txt_surname6.setText("");
-        txt_dob6.setText("");
-        txt_id4.setText("");
-        txt_email2.setText("");
-        txt_tel2.setText("");
-        txt_address2.setText("");
-        txt_dep4.setText("");
-        txt_add4.setText("");
-        txt_apt.setText("");
-        txt_pc2.setText("");
-        txt_desig4.setText("");
-        txt_status4.setText("");
-        txt_salary6.setText("");
-        txt_job4.setText("");
-        txt_doj4.setText("");
-        lbl_img.setIcon(null);
-        txt_search.setText("");
-    }//GEN-LAST:event_jButton8ActionPerformed
-///////////image attach bautton
-    private ImageIcon format = null;
-    //strin filename
-    String filename = null;
-//    byte[] person_image = null;    
-//    private String gender;
+    }
 
-    private void btnAttachImageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAttachImageActionPerformed
-        // TODO add your handling code here:
-        JFileChooser jChooser = new JFileChooser();
-        jChooser.showOpenDialog(null);
-        File file = jChooser.getSelectedFile();
-        filename = file.getAbsolutePath();
-        Image icon = new ImageIcon(filename).getImage().getScaledInstance(img.getWidth(), img.getHeight(), Image.SCALE_SMOOTH);
-        ImageIcon imageIcon = new ImageIcon(icon);
-        img.setIcon(imageIcon);
+///ctreate mouse intnce mathode
+    public void createMouseIntance() {
+        Component[] components = jPanelManu.getComponents();
+        for (Component component : components) {
+            if (component instanceof JLabel) {
+                JLabel label = (JLabel) component;
+                label.addMouseListener(new MouseListener() {
+                    @Override
+                    public void mouseClicked(MouseEvent me) {
+                        ////change background
+                        setBackgroundEfact(label);
+                        String name = label.getText().trim();
+                        switch (name) {
+                            case "Employee Manager":
+                                setPanelShow(employee);
+//                                System.out.println(name);
+                                break;
 
-        //////image path byte code
+                            case "Search":
+
+                                setPanelShow(searchEmployee);
+                                break;
+
+                            case "Allowance":
+                                setPanelShow(allowance);
+                                break;
+
+                            case "Update Salary":
+                                setPanelShow(updateSalary);
+                                break;
+
+                            case "Deduction":
+                                setPanelShow(deduction);
+                                break;
+
+                            case "Payment": {
+                                setPanelShow(payment);
+                                break;
+                            }
+                        }
+
+                    }
+
+                    @Override
+                    public void mousePressed(MouseEvent me) {
+
+                    }
+
+                    @Override
+                    public void mouseReleased(MouseEvent me) {
+
+                    }
+
+                    @Override
+                    public void mouseEntered(MouseEvent me) {
+                        label.setBorder(setBorder);
+                    }
+
+                    @Override
+                    public void mouseExited(MouseEvent me) {
+                        label.setBorder(defaultBorder);
+                    }
+                });
+            }
+        }
+    }
+
+    //////
+    Connection conn = null;
+    PreparedStatement pst = null;
+    ResultSet rs = null;
+    byte[] person_image = null;/////////table model
+
+    void Update_table() {
         try {
-            File imageFile = new File(filename);
-            FileInputStream fos = new FileInputStream(imageFile);
-            byte[] bs = new byte[1024];
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            for (int readNume; (readNume = fos.read(bs)) != -1;) {
-                baos.write(bs, 0, readNume);
-            }
-            person_image = baos.toByteArray();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
-        }
-    }//GEN-LAST:event_btnAttachImageActionPerformed
-
-    private void txt_searchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_searchKeyReleased
-        // TODO add your handling code here:
-        try {
-            String s = txt_search.getText();
-            String sql = "select * from staff_information where employee_id=' " + s + "'";
-//            conn = ConnectionProvider.getConnectDatabase();
-            Statement st = conn.createStatement();
-
-            rs = st.executeQuery(sql);
-            while (rs.next()) {
-
-                int add1 = rs.getInt("employee_id");
-                txt_id4.setText(String.valueOf(add1));
-
-                String add2 = rs.getString("first_name");
-                txt_firstname6.setText(add2);
-
-                String add3 = rs.getString("surname");
-                txt_surname6.setText(add3);
-
-                String add4 = rs.getString("Dob");
-                txt_dob6.setText(add4);
-
-                String add5 = rs.getString("Email");
-                txt_email2.setText(add5);
-
-                String add6 = rs.getString("Telephone");
-                txt_tel2.setText(add6);
-
-                String add7 = rs.getString("Address");
-                txt_address2.setText(add7);
-
-                String add8 = rs.getString("Department");
-                txt_dep4.setText(add8);
-
-                String add9 = rs.getString("Gender");
-//                txt_dep.setText(add9);
-
-                String add10 = rs.getString("Salary");
-                txt_salary6.setText(add10);
-
-                String add11 = rs.getString("address2l");
-                txt_add4.setText(add11);
-
-                String add12 = rs.getString("Apartment");
-                txt_apt.setText(add12);
-
-                String add13 = rs.getString("Post_code");
-                txt_pc2.setText(add13);
-
-                String add14 = rs.getString("Status");
-                txt_status.setText(add14);
-
-                String add15 = rs.getString("Date_hired");
-                txt_doj4.setText(add15);
-
-                String add16 = rs.getString("job_title");
-                txt_job4.setText(add16);
-
-                String add17 = rs.getString("Designation");
-                txt_desig4.setText(add17);
-
-                byte[] img = rs.getBytes("Image");
-                ImageIcon imageIcon = new ImageIcon(new ImageIcon(img).getImage().getScaledInstance(lbl_img.getWidth(), lbl_img.getHeight(), Image.SCALE_SMOOTH));
-                lbl_img.setIcon(imageIcon);
-            }
+            conn = ConnectionProvider.getConnectDatabase();
+            String sql = "select * from allowance";
+            pst = conn.prepareStatement(sql);
+            rs = pst.executeQuery();
+            table_allowance.setModel(DbUtils.resultSetToTableModel(rs));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
             e.printStackTrace();
         } finally {
 
             try {
-
                 rs.close();
                 pst.close();
 
@@ -3872,37 +3882,14 @@ public class HomePage extends javax.swing.JFrame {
 
             }
         }
-    }//GEN-LAST:event_txt_searchKeyReleased
+    }
 
-    private void employeeComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_employeeComponentShown
-        // TODO add your handling code here:
-        int ei=EmployeePayrollSystem.empId;
-        txt_emp.setText(String.valueOf(ei));
-    }//GEN-LAST:event_employeeComponentShown
-
-    private void searchEmployeeComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_searchEmployeeComponentShown
-        // TODO add your handling code here:
-        int ei=EmployeePayrollSystem.empId;
-        txt_emp4.setText(String.valueOf(ei));
-    }//GEN-LAST:event_searchEmployeeComponentShown
-
-    private void allowanceComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_allowanceComponentShown
-        // TODO add your handling code here:
-        int ei=EmployeePayrollSystem.empId;
-        txt_emp2.setText(String.valueOf(ei));
-    }//GEN-LAST:event_allowanceComponentShown
-
-    private void updateSalaryComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_updateSalaryComponentShown
-        // TODO add your handling code here:
-        int ei=EmployeePayrollSystem.empId;
-        txt_emp3.setText(String.valueOf(ei));
-    }//GEN-LAST:event_updateSalaryComponentShown
-
-    private void deductionComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_deductionComponentShown
-        // TODO add your handling code here:
-        int ei=EmployeePayrollSystem.empId;
-        lbl_emp.setText(String.valueOf(ei));
-    }//GEN-LAST:event_deductionComponentShown
+///////////image attach bautton
+    private ImageIcon format = null;
+    //strin filename
+    String filename = null;
+//    byte[] person_image = null;    
+//    private String gender;
 
     /**
      * @param args the command line arguments
