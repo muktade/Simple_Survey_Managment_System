@@ -5,39 +5,34 @@
 package ssms;
 
 import employeepayrollsystem.*;
+import DAO.ConnectionProvider;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.JRootPane;
 import javax.swing.Timer;
 
 /**
  *
- * @author Elite-Gadget
+ * @author M. A. MUKTADEER
  */
 public class SignUp extends javax.swing.JFrame {
 
     Connection con = null;
+    ResultSet rs = null;
+    PreparedStatement pst = null;
 
     /**
-     * Creates new form NewJFrame
+     * Creates new form Login
      */
     public SignUp(Connection con) {
         initComponents();
         this.con = con;
         dateCreate();
-        openCenter();
-
-    }
-
-    void openCenter() {
-        
-//        setDefaultCloseOperation(0);
-        setLocationRelativeTo(null);
     }
 
     void dateCreate() {
@@ -52,6 +47,39 @@ public class SignUp extends javax.swing.JFrame {
         int hr = cld.get(Calendar.HOUR);
         txtDate.setText(date + "/" + (month + 1) + "/" + year + "  |  " + hr + ":" + mnt + ":" + sc);
     }
+
+    //////////mathod show password
+//    void showPass() {
+//        if (jCheckBoxEye.isSelected()) {
+//            txt_pass.setEchoChar((char) 0);
+//        } else {
+//            txt_pass.setEchoChar('*');
+//        }
+//    }
+
+    ///mathod for show error message
+    Timer timerUp = new Timer(30, new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            if (jPanelErrorMass.getHeight() > 0) {
+                jPanelErrorMass.setBounds(jPanelErrorMass.getX(), jPanelErrorMass.getY(), jPanelErrorMass.getWidth(), jPanelErrorMass.getHeight() - 5);
+            } else {
+                timerUp.stop();
+            }
+        }
+    });
+    ///for show Error message
+
+    Timer timerDown = new Timer(30, new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            if (jPanelErrorMass.getHeight() != 100) {
+                jPanelErrorMass.setBounds(jPanelErrorMass.getX(), jPanelErrorMass.getY(), jPanelErrorMass.getWidth(), jPanelErrorMass.getHeight() + 5);
+            } else {
+                timerDown.stop();
+            }
+        }
+    });
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -82,13 +110,14 @@ public class SignUp extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(70, 73, 73));
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/X.png"))); // NOI18N
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("employeepayrollsystem/Bundle"); // NOI18N
-        jLabel4.setText(bundle.getString("Login.jLabel4.text")); // NOI18N
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("ssms/Bundle"); // NOI18N
+        jLabel4.setText(bundle.getString("SignUp.jLabel4.text")); // NOI18N
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel4MouseClicked(evt);
@@ -97,7 +126,7 @@ public class SignUp extends javax.swing.JFrame {
 
         txtDate.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
         txtDate.setForeground(new java.awt.Color(255, 255, 255));
-        txtDate.setText(bundle.getString("Login.txtDate.text")); // NOI18N
+        txtDate.setText(bundle.getString("SignUp.txtDate.text")); // NOI18N
 
         jPanel2.setBackground(new java.awt.Color(68, 108, 178));
 
@@ -105,17 +134,17 @@ public class SignUp extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Impact", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(138, 2, 11));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText(bundle.getString("Login.jLabel1.text")); // NOI18N
+        jLabel1.setText(bundle.getString("SignUp.jLabel1.text")); // NOI18N
         jLabel1.setOpaque(true);
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user.png"))); // NOI18N
-        jLabel2.setText(bundle.getString("Login.jLabel2.text")); // NOI18N
+        jLabel2.setText(bundle.getString("SignUp.jLabel2.text")); // NOI18N
 
         txt_userName.setBackground(new java.awt.Color(153, 153, 153));
         txt_userName.setFont(new java.awt.Font("sansserif", 0, 16)); // NOI18N
         txt_userName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_userName.setText(bundle.getString("Login.txt_userName.text")); // NOI18N
+        txt_userName.setText(bundle.getString("SignUp.txt_userName.text")); // NOI18N
         txt_userName.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txt_userNameKeyReleased(evt);
@@ -124,12 +153,12 @@ public class SignUp extends javax.swing.JFrame {
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/lock.png"))); // NOI18N
-        jLabel3.setText(bundle.getString("Login.jLabel3.text")); // NOI18N
+        jLabel3.setText(bundle.getString("SignUp.jLabel3.text")); // NOI18N
 
         btnLogin.setBackground(new java.awt.Color(1, 152, 115));
         btnLogin.setFont(new java.awt.Font("sansserif", 0, 16)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
-        btnLogin.setText(bundle.getString("Login.btnLogin.text")); // NOI18N
+        btnLogin.setText(bundle.getString("SignUp.btnLogin.text")); // NOI18N
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
@@ -139,8 +168,8 @@ public class SignUp extends javax.swing.JFrame {
         btnSignUp.setBackground(new java.awt.Color(1, 152, 115));
         btnSignUp.setFont(new java.awt.Font("sansserif", 0, 16)); // NOI18N
         btnSignUp.setForeground(new java.awt.Color(255, 255, 255));
-        btnSignUp.setText(bundle.getString("Login.btnSignUp.text")); // NOI18N
-        btnSignUp.setActionCommand(bundle.getString("Login.btnSignUp.actionCommand")); // NOI18N
+        btnSignUp.setText(bundle.getString("SignUp.btnSignUp.text")); // NOI18N
+        btnSignUp.setActionCommand(bundle.getString("SignUp.btnSignUp.actionCommand")); // NOI18N
         btnSignUp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSignUpActionPerformed(evt);
@@ -150,7 +179,7 @@ public class SignUp extends javax.swing.JFrame {
         txt_pass.setBackground(new java.awt.Color(153, 153, 153));
         txt_pass.setFont(new java.awt.Font("sansserif", 0, 16)); // NOI18N
         txt_pass.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_pass.setText(bundle.getString("Login.txt_pass.text")); // NOI18N
+        txt_pass.setText(bundle.getString("SignUp.txt_pass.text")); // NOI18N
         txt_pass.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txt_passKeyReleased(evt);
@@ -162,7 +191,7 @@ public class SignUp extends javax.swing.JFrame {
 
         jLabelUp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelUp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/up.png"))); // NOI18N
-        jLabelUp.setText(bundle.getString("Login.jLabelUp.text")); // NOI18N
+        jLabelUp.setText(bundle.getString("SignUp.jLabelUp.text")); // NOI18N
         jLabelUp.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabelUpMouseClicked(evt);
@@ -171,7 +200,7 @@ public class SignUp extends javax.swing.JFrame {
 
         txt_msg.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         txt_msg.setForeground(new java.awt.Color(255, 255, 255));
-        txt_msg.setText(bundle.getString("Login.txt_msg.text")); // NOI18N
+        txt_msg.setText(bundle.getString("SignUp.txt_msg.text")); // NOI18N
 
         javax.swing.GroupLayout jPanelErrorMassLayout = new javax.swing.GroupLayout(jPanelErrorMass);
         jPanelErrorMass.setLayout(jPanelErrorMassLayout);
@@ -199,7 +228,7 @@ public class SignUp extends javax.swing.JFrame {
         txt_userName1.setBackground(new java.awt.Color(153, 153, 153));
         txt_userName1.setFont(new java.awt.Font("sansserif", 0, 16)); // NOI18N
         txt_userName1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_userName1.setText(bundle.getString("Login.txt_userName.text")); // NOI18N
+        txt_userName1.setText(bundle.getString("SignUp.txt_userName1.text")); // NOI18N
         txt_userName1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txt_userName1KeyReleased(evt);
@@ -208,12 +237,12 @@ public class SignUp extends javax.swing.JFrame {
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/paper-clip-2-16.png"))); // NOI18N
-        jLabel5.setText(bundle.getString("Login.jLabel2.text")); // NOI18N
+        jLabel5.setText(bundle.getString("SignUp.jLabel5.text")); // NOI18N
 
         txt_pass1.setBackground(new java.awt.Color(153, 153, 153));
         txt_pass1.setFont(new java.awt.Font("sansserif", 0, 16)); // NOI18N
         txt_pass1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_pass1.setText(bundle.getString("Login.txt_pass.text")); // NOI18N
+        txt_pass1.setText(bundle.getString("SignUp.txt_pass1.text")); // NOI18N
         txt_pass1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txt_pass1KeyReleased(evt);
@@ -222,7 +251,7 @@ public class SignUp extends javax.swing.JFrame {
 
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/lock.png"))); // NOI18N
-        jLabel6.setText(bundle.getString("Login.jLabel3.text")); // NOI18N
+        jLabel6.setText(bundle.getString("SignUp.jLabel6.text")); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -236,9 +265,8 @@ public class SignUp extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txt_userName, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -333,30 +361,18 @@ public class SignUp extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txt_pass1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_pass1KeyReleased
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_pass1KeyReleased
+        dispose();
+    }//GEN-LAST:event_jLabel4MouseClicked
 
-    private void txt_userName1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_userName1KeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_userName1KeyReleased
-
-    private void jLabelUpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelUpMouseClicked
-        // TODO add your handling code here:
-        timerUp.start();
-    }//GEN-LAST:event_jLabelUpMouseClicked
-
-    private void txt_passKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_passKeyReleased
+    private void txt_userNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_userNameKeyReleased
         // TODO add your handling code here:
         //        valid();
-    }//GEN-LAST:event_txt_passKeyReleased
-
-    private void btnSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignUpActionPerformed
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this, "Sign up");
-    }//GEN-LAST:event_btnSignUpActionPerformed
+    }//GEN-LAST:event_txt_userNameKeyReleased
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
@@ -364,47 +380,83 @@ public class SignUp extends javax.swing.JFrame {
         new Login().setVisible(true);
     }//GEN-LAST:event_btnLoginActionPerformed
 
-    private void txt_userNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_userNameKeyReleased
+    private void btnSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignUpActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "Sign up");
+    }//GEN-LAST:event_btnSignUpActionPerformed
+
+    private void txt_passKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_passKeyReleased
         // TODO add your handling code here:
         //        valid();
-    }//GEN-LAST:event_txt_userNameKeyReleased
+    }//GEN-LAST:event_txt_passKeyReleased
 
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+    private void jLabelUpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelUpMouseClicked
         // TODO add your handling code here:
-        dispose();
-    }//GEN-LAST:event_jLabel4MouseClicked
+        timerUp.start();
+    }//GEN-LAST:event_jLabelUpMouseClicked
 
-    ///mathod for show error message
-    Timer timerUp = new Timer(30, new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent ae) {
-            if (jPanelErrorMass.getHeight() > 0) {
-                jPanelErrorMass.setBounds(jPanelErrorMass.getX(), jPanelErrorMass.getY(), jPanelErrorMass.getWidth(), jPanelErrorMass.getHeight() - 5);
+    private void txt_userName1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_userName1KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_userName1KeyReleased
+
+    private void txt_pass1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_pass1KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_pass1KeyReleased
+
+    
+    ////valid fild
+    private void valid() {
+        if (!txt_userName.getText().equals("")) {
+            if (!txt_pass.getText().equals("")) {
+                btnLogin.setEnabled(true);
             } else {
-                timerUp.stop();
+                btnLogin.setEnabled(false);
             }
         }
-    });
-    ///for show Error message
-
-    Timer timerDown = new Timer(30, new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent ae) {
-            if (jPanelErrorMass.getHeight() != 100) {
-                jPanelErrorMass.setBounds(jPanelErrorMass.getX(), jPanelErrorMass.getY(), jPanelErrorMass.getWidth(), jPanelErrorMass.getHeight() + 5);
-            } else {
-                timerDown.stop();
-            }
-        }
-    });
-
-    public static void main(String[] args) {
-        new SignUp(null).setVisible(true);
     }
+
     /**
      * @param args the command line arguments
      */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(SignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(SignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(SignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(SignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+//                new splashscreen.SplashScreen(null, true).setVisible(true);
+                new SignUp(null).setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
