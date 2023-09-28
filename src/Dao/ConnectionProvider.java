@@ -33,7 +33,7 @@ public class ConnectionProvider {
         }
         
     }
-    public static void main(String[] args) {
+    public static void main(String[] args){
         getConnectDatabase();
     }
     

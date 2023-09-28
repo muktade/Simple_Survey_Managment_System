@@ -15,7 +15,7 @@ public class tables {
 
     public static void main(String[] args) {
         try {
-            String useTable = "create table usert(id int AUTO_INCREMENT primary key, name varchar(50), email varchar(100), mobailNumber varchar(20), address varchar(200), password varchar(200), securityQuestion varchar(200), answer varchar(200), status varchar(10), UNIQUE(email))";
+            String useTable = "create table user(id int AUTO_INCREMENT primary key, name varchar(50), email varchar(100), mobailNumber varchar(20), address varchar(200), password varchar(200), securityQuestion varchar(200), answer varchar(200), status varchar(10), UNIQUE(email))";
             DbOpretions.setOrDeleteData(useTable, "User Table is Created");
             ///// category table
             String categoryTbl="create table category(id int AUTO_INCREMENT PRIMARY KEY, name varchar(150))";
