@@ -18,7 +18,7 @@ public class tables {
             String useTable = "create table surveyCreator(id int AUTO_INCREMENT primary key, userName varchar(20), password varchar(150),firstName varchar(20), lastName varchar(20),faculty varchar(20),gender varchar(10), email varchar(50),phoneNo varchar(20),isActive int, createDate Date )";
             DbOpretions.setOrDeleteData(useTable, "surveyCreator Table is Created");
             ///// Servey table
-            String servey="create table cervey(id int AUTO_INCREMENT PRIMARY KEY, surveyTitle varchar(30),creatorId int, creatorName varchar(30), createDate date)";
+            String servey="create table servey(id int AUTO_INCREMENT PRIMARY KEY, surveyTitle varchar(30),creatorId int, creatorName varchar(30), createDate date)";
             DbOpretions.setOrDeleteData(servey, "Servey Table is created");
             ///// question table
             String question="create table question(id int AUTO_INCREMENT PRIMARY KEY, qPosition int,surveyId int, qText varchar(100), qAns varchar(10))";
@@ -30,9 +30,9 @@ public class tables {
             String sMapping="create table sMapping(id int AUTO_INCREMENT PRIMARY KEY, scId int,surveyId int, qAns varchar(10))";
             DbOpretions.setOrDeleteData(sMapping, "SMapping Table is created");
 
-//            /////////product Table 
-//            String productTbl = "create table product(id int AUTO_INCREMENT primary key, name varchar(150), category varchar(150),price varchar(50))";
-//            DbOpretions.setOrDeleteData(productTbl, "Product Table is Created.");
+            /////////Audit Table 
+            String auditTbl = "create table Audit(id int AUTO_INCREMENT primary key, userName varchar(30), date date, status varchar(20))";
+            DbOpretions.setOrDeleteData(auditTbl, "Audit Table is Created.");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }

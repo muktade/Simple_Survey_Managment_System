@@ -18,8 +18,8 @@ import javax.swing.JOptionPane;
  */
 public class DbOpretions {
     public static void setOrDeleteData(String Query, String msg){
-        try {
-            Connection con = ConnectionProvider.getConnectDatabase();
+        try (Connection con = ConnectionProvider.getConnectDatabase();){
+//            Connection con = ConnectionProvider.getConnectDatabase();
             Statement st = con.createStatement();
             st.executeUpdate(Query);
             if(!msg.equals("")){
@@ -29,6 +29,7 @@ public class DbOpretions {
             JOptionPane.showMessageDialog(null, ex,"Message",JOptionPane.ERROR_MESSAGE);
             System.out.println(ex);
         }
+        
     }
     
     public static ResultSet getData(String quary){

@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -22,10 +22,10 @@ public class ConnectionProvider {
     public static Connection getConnectDatabase(){
         
         try{
-//            Class.forName("com.mysql.cj.jdbc.Driver");
-            Class.forName("org.sqlite.JDBC");
-//            Connection conn =DriverManager.getConnection("jdbc:mysql://localhost:3306/eps","root","");
-            Connection conn =DriverManager.getConnection("jdbc:sqlite:db.sqlite","root","root");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+//            Class.forName("org.sqlite.JDBC");
+            Connection conn =DriverManager.getConnection("jdbc:mysql://103.143.242.168:3306/ssms","vms_db","vms_db123");
+//            Connection conn =DriverManager.getConnection("jdbc:sqlite:db.sqlite","root","root");
             JOptionPane.showMessageDialog(null, "Connection to database is successful");
             
 //            Statement stmt = conn.createStatement();
