@@ -57,7 +57,7 @@ import net.proteanit.sql.DbUtils;
  */
 public class HomePage extends javax.swing.JFrame {
 
-   int i;
+    int i;
     String gender;
 
     /////news show
@@ -129,7 +129,7 @@ public class HomePage extends javax.swing.JFrame {
     JPanel[] panels = new JPanel[6];
 
     public HomePage() throws SQLException {
-        
+
         initComponents();
         setBorder();
         jPanel7.setVisible(false);
@@ -164,15 +164,23 @@ public class HomePage extends javax.swing.JFrame {
         ///table Update
 //        Update_table();
         conn = ConnectionProvider.getConnectDatabase();
-        
+
         loadTable();
     }
+
     private void loadTable() throws SQLException {
         String sql = "select userName as 'User Name', firstName as 'First Name', lastName as 'Last Name', faculty as 'Faculty', gender as 'Gender', email as 'Email', phoneNo as 'Phone No.' from surveyCreator";
-        pst = conn.prepareStatement(sql);
+        buildCreatorValue(sql);
+    }
+
+    private void buildCreatorValue(String sql) {
+        try {
+            pst = conn.prepareStatement(sql);
             rs = pst.executeQuery();
             tblSurveyList.setModel(DbUtils.resultSetToTableModel(rs));
-        
+        } catch (SQLException ex) {
+            Logger.getLogger(HomePage.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -2318,10 +2326,10 @@ public class HomePage extends javax.swing.JFrame {
             try {
                 conn = ConnectionProvider.getConnectDatabase();
                 String sql = "insert into Staff_information "
-                + "(first_name,surname,Dob,Email,"
-                + "Telephone,Address,Department,"
-                + "Image,Salary,Gender,address2l,"
-                + "Post_code, Designation,Status,job_title,Apartment,Date_hired) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
+                        + "(first_name,surname,Dob,Email,"
+                        + "Telephone,Address,Department,"
+                        + "Image,Salary,Gender,address2l,"
+                        + "Post_code, Designation,Status,job_title,Apartment,Date_hired) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
 
                 pst = conn.prepareStatement(sql);
                 pst.setString(1, txt_firstname.getText());
@@ -2473,7 +2481,7 @@ public class HomePage extends javax.swing.JFrame {
 
     private void employeeComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_employeeComponentShown
         // TODO add your handling code here:
-        int ei=EmployeePayrollSystem.empId;
+        int ei = EmployeePayrollSystem.empId;
         txt_emp.setText(String.valueOf(ei));
     }//GEN-LAST:event_employeeComponentShown
 
@@ -2512,10 +2520,8 @@ public class HomePage extends javax.swing.JFrame {
                 String add9 = rs.getString("gender");
                 //                txt_dep.setText(add9);
 
-                
 //                String add14 = rs.getString("Status");
 //                txt_status.setText(add14);
-
 //                byte[] img = rs.getBytes("Image");
 //                ImageIcon imageIcon = new ImageIcon(new ImageIcon(img).getImage().getScaledInstance(lbl_img.getWidth(), lbl_img.getHeight(), Image.SCALE_SMOOTH));
 //                lbl_img.setIcon(imageIcon);
@@ -2625,8 +2631,8 @@ public class HomePage extends javax.swing.JFrame {
                 String value8 = txt_faculty.getText();
 
                 String sql = "update surveyCreator set userName='" + value4 + "',firstName='" + value1 + "', lastName='" + value2 + "', "
-                + "',email='" + value5 + "',phoneNo='" + value6 + "',"
-                + "',faculty='" + value8 + "' where userName='" + value4 + "' ";
+                        + "',email='" + value5 + "',phoneNo='" + value6 + "',"
+                        + "',faculty='" + value8 + "' where userName='" + value4 + "' ";
                 pst = conn.prepareStatement(sql);
                 pst.execute();
                 JOptionPane.showMessageDialog(null, "Record Updated");
@@ -2680,7 +2686,7 @@ public class HomePage extends javax.swing.JFrame {
 
     private void searchEmployeeComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_searchEmployeeComponentShown
         // TODO add your handling code here:
-        int ei=EmployeePayrollSystem.empId;
+        int ei = EmployeePayrollSystem.empId;
         txt_emp4.setText(String.valueOf(ei));
     }//GEN-LAST:event_searchEmployeeComponentShown
 
@@ -2878,7 +2884,7 @@ public class HomePage extends javax.swing.JFrame {
 
     private void allowanceComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_allowanceComponentShown
         // TODO add your handling code here:
-        int ei=EmployeePayrollSystem.empId;
+        int ei = EmployeePayrollSystem.empId;
         txt_emp2.setText(String.valueOf(ei));
     }//GEN-LAST:event_allowanceComponentShown
 
@@ -3016,7 +3022,7 @@ public class HomePage extends javax.swing.JFrame {
 
     private void updateSalaryComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_updateSalaryComponentShown
         // TODO add your handling code here:
-        int ei=EmployeePayrollSystem.empId;
+        int ei = EmployeePayrollSystem.empId;
         txt_emp3.setText(String.valueOf(ei));
     }//GEN-LAST:event_updateSalaryComponentShown
 
@@ -3031,7 +3037,7 @@ public class HomePage extends javax.swing.JFrame {
             //            pst.setString(1, txt_search.getText());
             rs = st.executeQuery(sql);
             while (rs.next()) {
-                
+
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
@@ -3050,7 +3056,7 @@ public class HomePage extends javax.swing.JFrame {
 
     private void deductionComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_deductionComponentShown
         // TODO add your handling code here:
-        int ei=EmployeePayrollSystem.empId;
+        int ei = EmployeePayrollSystem.empId;
         lbl_emp.setText(String.valueOf(ei));
     }//GEN-LAST:event_deductionComponentShown
 
@@ -3591,5 +3597,4 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JPanel updateSalary;
     // End of variables declaration//GEN-END:variables
 
-   
 }
