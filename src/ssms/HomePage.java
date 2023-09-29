@@ -169,7 +169,11 @@ public class HomePage extends javax.swing.JFrame {
     }
 
     private void loadTable() throws SQLException {
-        String sql = "select userName as 'User Name', firstName as 'First Name', lastName as 'Last Name', faculty as 'Faculty', gender as 'Gender', email as 'Email', phoneNo as 'Phone No.' from surveyCreator";
+        String sql = "select userName as 'User Name', firstName as 'First Name', lastName as 'Last Name', faculty as 'Faculty', gender as 'Gender', email as 'Email', phoneNo as 'Phone No.', "
+                + " CASE" +
+                    "    WHEN isActive = 1 THEN 'Active'" +
+                    "    ELSE 'Block'" +
+                    " END AS 'Status' from surveyCreator";
         buildCreatorValue(sql);
     }
 
@@ -3031,14 +3035,14 @@ public class HomePage extends javax.swing.JFrame {
         try {
             //            conn=ConnectionProvider.getConnectDatabase();
             String id = txt_search4.getText();
-            String sql = "select * from Staff_information where employee_id= '" + id + "'";
-            Statement st = conn.createStatement();
-            //            pst = conn.prepareStatement(sql);
-            //            pst.setString(1, txt_search.getText());
-            rs = st.executeQuery(sql);
-            while (rs.next()) {
-
-            }
+            String sql = "select userName as 'User Name', firstName as 'First Name', lastName as 'Last Name', faculty as 'Faculty', gender as 'Gender', email as 'Email', phoneNo as 'Phone No.', "
+                + " CASE" +
+                    "    WHEN isActive = 1 THEN 'Active'" +
+                    "    ELSE 'Block'" +
+                    "END AS 'Status' from surveyCreator where userName like '%" + id + "%'";
+//            String sql = "select userName as 'User Name', firstName as 'First Name', lastName as 'Last Name', faculty as 'Faculty', gender as 'Gender', email as 'Email', phoneNo as 'Phone No.' from surveyCreator where userName like '%" + id + "%'";
+       
+            buildCreatorValue(sql);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         } finally {
@@ -3278,7 +3282,7 @@ public class HomePage extends javax.swing.JFrame {
                                 setPanelShow(deduction);
                                 break;
 
-                            case "Payment": {
+                            case "Creator Req List": {
                                 setPanelShow(payment);
                                 break;
                             }
